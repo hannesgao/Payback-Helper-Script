@@ -74,7 +74,7 @@ The script uses [Semantic Versioning](https://semver.org/) through the `@version
 - **MINOR**: new feature
 - **PATCH**: bug fix or metadata-only change
 
-Do not change `@name` or `@namespace`: userscript managers use them to identify the script, and changing them makes existing installs appear as a separate script.
+Avoid changing `@name` or `@namespace`: userscript managers use them to identify the script. Existing installs pick up the change through auto-update, but installing manually from the link again can create a duplicate script.
 
 ## Local checks
 
