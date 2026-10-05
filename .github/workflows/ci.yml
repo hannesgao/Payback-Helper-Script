@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint userscript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: node --check payback-helper.user.js
+
+      - name: Check metadata block
+        run: |
+          f=payback-helper.user.js
+          head -n 1 "$f" | grep -qx '// ==UserScript==' || { echo "::error::Metadata block must start on line 1"; exit 1; }
+          for key in name namespace version description author license match updateURL downloadURL; do
+            grep -Eq "^// @${key}[[:space:]]" "$f" || { echo "::error::Missing @${key} in metadata block"; exit 1; }
+          done
+          grep -Eq '^// @version[[:space:]]+[0-9]+\.[0-9]+\.[0-9]+$' "$f" || { echo "::error::@version must be SemVer (x.y.z)"; exit 1; }
+
+  pr-title:
+    name: PR title
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Conventional Commits format
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          re='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9-]+\))?!?: [^ ].{0,71}$'
+          if [[ ! "$TITLE" =~ $re ]]; then
+            echo "::error::PR title must follow Conventional Commits, e.g. 'fix(activation): handle disabled buttons'. Got: $TITLE"
+            exit 1
+          fi
