@@ -1,8 +1,7 @@
 // ==UserScript==
-// @name         PAYBACK – Alle Coupons aktivieren
-// @name:en      PAYBACK – Activate All Coupons
-// @namespace    https://belvast.de/
-// @version      0.2.1
+// @name         Payback Helper
+// @namespace    https://github.com/hannesgao
+// @version      0.2.2
 // @description  Aktiviert alle noch nicht aktivierten eCoupons im PAYBACK Coupon-Center mit einem Klick
 // @description:en Activates all not-yet-activated eCoupons in the PAYBACK coupon center with one click
 // @author       Hannes Gao
