@@ -1,19 +1,19 @@
 // ==UserScript==
-// @name         Payback Helper
-// @namespace    https://github.com/hannesgao
-// @version      0.2.2
-// @description  Aktiviert alle noch nicht aktivierten eCoupons im PAYBACK Coupon-Center mit einem Klick
-// @description:en Activates all not-yet-activated eCoupons in the PAYBACK coupon center with one click
-// @author       Hannes Gao
-// @license      MIT
-// @homepageURL  https://github.com/hannesgao/Payback-Helper-Script
-// @supportURL   https://github.com/hannesgao/Payback-Helper-Script/issues
-// @updateURL    https://raw.githubusercontent.com/hannesgao/Payback-Helper-Script/main/payback-helper.user.js
-// @downloadURL  https://raw.githubusercontent.com/hannesgao/Payback-Helper-Script/main/payback-helper.user.js
-// @match        https://www.payback.de/coupons*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=payback.de
-// @run-at       document-idle
-// @grant        none
+// @name            Payback Helper
+// @namespace       https://github.com/hannesgao
+// @version         0.2.2
+// @description     Aktiviert alle noch nicht aktivierten eCoupons im PAYBACK Coupon-Center mit einem Klick
+// @description:en  Activates all not-yet-activated eCoupons in the PAYBACK coupon center with one click
+// @author          Hannes Gao
+// @license         MIT
+// @homepageURL     https://github.com/hannesgao/Payback-Helper-Script
+// @supportURL      https://github.com/hannesgao/Payback-Helper-Script/issues
+// @updateURL       https://raw.githubusercontent.com/hannesgao/Payback-Helper-Script/main/payback-helper.user.js
+// @downloadURL     https://raw.githubusercontent.com/hannesgao/Payback-Helper-Script/main/payback-helper.user.js
+// @match           https://www.payback.de/coupons*
+// @icon            https://www.google.com/s2/favicons?sz=64&domain=payback.de
+// @run-at          document-idle
+// @grant           none
 // ==/UserScript==
 
 (function () {
